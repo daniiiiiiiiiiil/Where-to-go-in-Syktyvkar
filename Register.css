@@ -1,0 +1,147 @@
+body{
+    background-color: blueviolet;
+}
+#RegisterBlock{
+    position: fixed;
+    height: 850px;
+    width: 60%;
+    margin-top: 40px;
+    margin-left: 380px;
+    background: white;
+    border: 2px solid #808080;
+    border-radius: 10%;
+}
+
+#nameBlock{
+    position: fixed;
+    margin-left: 22%;
+    font-size: 50px;
+}
+
+/* Исправляем позиции полей ввода */
+#inputLogin{
+    position: fixed;
+    height: 80px;
+    width: 40%;
+    margin-top: 150px;
+    margin-left: 17%;
+    border-radius: 10%;
+    font-size: 40px;
+}
+#inputPassword{
+    position: fixed;
+    height: 80px;
+    width: 40%;
+    margin-top: 250px;
+    margin-left: 17%;
+    border-radius: 10%;
+    font-size: 40px;
+}
+#inputPasswordСonfirmation{
+    position: fixed;
+    height: 80px;
+    width: 40%;
+    margin-top: 350px;
+    margin-left: 17%;
+    border-radius: 10%;
+    font-size: 40px;
+}
+#inputMail{
+    position: fixed;
+    height: 80px;
+    width: 40%;
+    margin-top: 450px;
+    margin-left: 17%;
+    border-radius: 10%;
+    font-size: 40px;
+}
+
+/* Исправляем позиции подписей */
+#Login{
+    position: fixed;
+    font-size: 30px;
+    margin-top: 173px;
+    margin-left: 220px;
+}
+#Password{
+    position: fixed;
+    font-size: 30px;
+    margin-top: 273px;
+    margin-left: 220px;
+}
+#PasswordСonfirmation{
+    position: fixed;
+    font-size: 30px;
+    margin-top: 373px;
+    margin-left: 50px;
+}
+#Mail{
+    position: fixed;
+    font-size: 30px;
+    margin-top: 473px;
+    margin-left: 230px;
+}
+
+#CheckBox{
+    margin-top: 570px;
+    margin-left: 200px;
+    width: 30px;
+    height: 30px;
+}
+#approval{
+    margin-top: -35px;
+    margin-left: 250px;
+    font-size: 30px;
+}
+
+#buttonRegister {
+    height: 100px;
+    width: 80%;
+    margin-top: 3%;
+    margin-left: 12%;
+    font-size: 30px;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+    transition: all 0.3s ease;
+}
+
+#buttonRegister:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+    background: linear-gradient(45deg, #ff8e53, #ff6b6b);
+}
+
+#buttonRegister:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(255, 107, 107, 0.4);
+}
+#entrance{
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+input:valid {
+    border-color: green;
+}
+
+#buttonRegister:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
