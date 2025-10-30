@@ -1,7 +1,7 @@
 body{
     background-color: blueviolet;
 }
-#RegisterBlock{
+#EntanceBlock{
     position: fixed;
     height: 850px;
     width: 60%;
@@ -14,9 +14,10 @@ body{
 
 #nameBlock{
     position: fixed;
-    margin-left: 22%;
+    margin-left: 26%;
     font-size: 50px;
 }
+
 
 #inputLogin{
     position: fixed;
@@ -59,7 +60,7 @@ body{
     position: fixed;
     font-size: 30px;
     margin-top: 173px;
-    margin-left: 220px;
+    margin-left: 150px;
 }
 #Password{
     position: fixed;
@@ -67,35 +68,26 @@ body{
     margin-top: 273px;
     margin-left: 220px;
 }
-#PasswordСonfirmation{
-    position: fixed;
-    font-size: 30px;
-    margin-top: 373px;
-    margin-left: 50px;
-}
-#Mail{
-    position: fixed;
-    font-size: 30px;
-    margin-top: 473px;
-    margin-left: 230px;
-}
 
-#CheckBox{
-    margin-top: 570px;
-    margin-left: 200px;
-    width: 30px;
-    height: 30px;
+#rememberMe{
+    position: fixed;
+    margin-left: 17%;
+    margin-top: 19%;
+    width: 50px;
+    height: 50px;
 }
-#approval{
-    margin-top: -35px;
-    margin-left: 250px;
+#rememberMeLabel{
+    position: fixed;
+    margin-left: 20%;
+    margin-top: 20%;
     font-size: 30px;
 }
 
-#buttonRegister {
+
+#buttonEntrance {
     height: 100px;
     width: 80%;
-    margin-top: 3%;
+    margin-top: 50%;
     margin-left: 12%;
     font-size: 30px;
     padding: 15px 35px;
@@ -110,17 +102,17 @@ body{
     transition: all 0.3s ease;
 }
 
-#buttonRegister:hover {
+#buttonEntrance:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
     background: linear-gradient(45deg, #ff8e53, #ff6b6b);
 }
 
-#buttonRegister:active {
+#buttonEntrance:active {
     transform: translateY(1px);
     box-shadow: 0 3px 10px rgba(255, 107, 107, 0.4);
 }
-#entrance{
+#Register{
     margin-left: 40%;
     margin-top: 5%;
 }
