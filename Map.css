@@ -1,0 +1,63 @@
+#mapText{
+     text-align: center;
+}
+
+#NameProduct,#NameRestaurants,#NameBusStop,#NameTheaterСinema{
+    font-size: 24px;
+    margin-left: 40px;
+}
+#NameRestaurants{
+    margin-left: 32%;
+    margin-top: -20px;
+}
+#NameBusStop{
+    margin-left: 62%;
+    margin-top: -20px;
+}
+#NameTheaterСinema{
+    margin-top: 25%;
+    margin-left: 75px;
+}
+
+
+#iframeProduct,#iframeRestaurants,#iframeBusStop,#iframeTheaterСinema{
+  margin-left: 40px;
+  width: 500px;
+  height: 400px;
+}
+#iframeRestaurants{
+    margin-left: 32%;
+}
+#iframeBusStop{
+    margin-left: 62%;
+}
+#iframeTheaterСinema{
+    margin-top: 2%;
+    margin-left: 75px;
+}
+
+
+#buttonShop,#buttonRestaurants,#buttonBusStop,#buttonTheaterСinema{
+    position: absolute;
+    margin-left: -26%;
+    margin-top: 420px;
+    width: 500px;
+    height: 50px;
+}
+#buttonTheaterСinema{
+     margin-top: 25%;
+}
+#AdreesMagnit,#AdreesGranat,#AdreesBusStop,#AdreesTheaterСinema{
+  margin-left: 320px;
+  margin-top: -425px;
+}
+#AdreesGranat{
+    margin-left: 44%;
+}
+#AdreesBusStop{
+    margin-left: 76%;
+}
+#AdreesTheaterСinema{
+    margin-top: -23%;
+    margin-left: 265px;
+}

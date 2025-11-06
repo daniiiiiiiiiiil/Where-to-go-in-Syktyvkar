@@ -1,16 +1,15 @@
-// Получаем элементы
 const buttonEntrance = document.getElementById('buttonEntrance');
 const inputLogin = document.getElementById('inputLogin');
 const inputPassword = document.getElementById('inputPassword');
 const rememberMe = document.getElementById('rememberMe');
 
-// Функция валидации email (для проверки если введен email)
+// проверки если введен email
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
 
-// Функция проверки всей формы (возвращает массив ошибок)
+// Функция проверки всей формы возвращает массив ошибок
 function validateForm() {
     let errors = [];
 
@@ -40,6 +39,17 @@ function showErrorsInAlert(errors) {
     }
 }
 
+// Сохранение данных при успешном входе (если выбрано "Запомнить меня")
+function saveLoginData() {
+    if (rememberMe.checked) {
+        localStorage.setItem('savedLogin', inputLogin.value);
+        localStorage.setItem('savedPassword', inputPassword.value);
+    } else {
+        localStorage.removeItem('savedLogin');
+        localStorage.removeItem('savedPassword');
+    }
+}
+
 // Обработчик клика по кнопке входа
 buttonEntrance.addEventListener('click', function(event) {
     event.preventDefault(); 
@@ -55,7 +65,8 @@ buttonEntrance.addEventListener('click', function(event) {
         
         console.log('Данные для входа:', loginData);
         
-        // Проверяем, является ли ввод email или логином
+        saveLoginData();
+        
         const isEmail = validateEmail(inputLogin.value);
         
         if (isEmail) {
@@ -64,8 +75,8 @@ buttonEntrance.addEventListener('click', function(event) {
             alert('Вход выполнен через логин!');
         }
         
-        // Здесь обычно отправка данных на сервер
-        // window.location.href = 'dashboard.html'; // Перенаправление после успешного входа
+        // Перенаправление на главную страницу после успешного входа
+        window.location.href = 'Main.html';
         
     } else {
         showErrorsInAlert(errors);
@@ -90,10 +101,8 @@ inputPassword.addEventListener('blur', function() {
 rememberMe.addEventListener('change', function() {
     if (this.checked) {
         console.log('Пользователь хочет быть запомненным');
-        // Здесь можно сохранить в localStorage
     } else {
         console.log('Пользователь не хочет быть запомненным');
-        // Здесь можно удалить из localStorage
     }
 });
 
@@ -110,20 +119,8 @@ function updateButtonState() {
     input.addEventListener('input', updateButtonState);
 });
 
-// Инициализация состояния кнопки при загрузке
-updateButtonState();
-
-// Дополнительные функции для улучшения UX
-
-// Показать/скрыть пароль (можно добавить иконку глаза)
-function togglePasswordVisibility() {
-    const type = inputPassword.getAttribute('type') === 'password' ? 'text' : 'password';
-    inputPassword.setAttribute('type', type);
-}
-
-// Автозаполнение при загрузке страницы (если пользователь выбрал "Запомнить меня")
+// Автозаполнение при загрузке страницы 
 document.addEventListener('DOMContentLoaded', function() {
-    // Проверяем сохраненные данные в localStorage
     const savedLogin = localStorage.getItem('savedLogin');
     const savedPassword = localStorage.getItem('savedPassword');
     
@@ -136,24 +133,10 @@ document.addEventListener('DOMContentLoaded', function() {
     updateButtonState();
 });
 
-// Сохранение данных при успешном входе (если выбрано "Запомнить меня")
-function saveLoginData() {
-    if (rememberMe.checked) {
-        localStorage.setItem('savedLogin', inputLogin.value);
-        localStorage.setItem('savedPassword', inputPassword.value);
-    } else {
-        localStorage.removeItem('savedLogin');
-        localStorage.removeItem('savedPassword');
-    }
+// Показать/скрыть пароль (дополнительная функция)
+function togglePasswordVisibility() {
+    const type = inputPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+    inputPassword.setAttribute('type', type);
 }
 
-// Обновляем обработчик кнопки входа для сохранения данных
-const originalClickHandler = buttonEntrance.onclick;
-buttonEntrance.onclick = function(event) {
-    if (validateForm().length === 0) {
-        saveLoginData();
-    }
-    if (originalClickHandler) {
-        originalClickHandler.call(this, event);
-    }
-};
+updateButtonState();

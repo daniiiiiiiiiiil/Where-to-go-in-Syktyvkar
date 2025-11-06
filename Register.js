@@ -3,7 +3,7 @@ const buttonRegister = document.getElementById('buttonRegister');
 const inputMail = document.getElementById('inputMail');
 const inputLogin = document.getElementById('inputLogin');
 const inputPassword = document.getElementById('inputPassword');
-const inputPasswordConfirmation = document.getElementById('inputPasswordСonfirmation'); // Исправлено!
+const inputPasswordConfirmation = document.getElementById('inputPasswordСonfirmation');
 const checkBox = document.getElementById('CheckBox');
 
 // Функция валидации email
@@ -13,13 +13,13 @@ function validateEmail(email) {
 }
 
 // Функция валидации пароля
-function validatePassword(password) {
-    return password.length >= 6; // Минимум 6 символов
+function validatePassword(password) {   
+    return password.length >= 6; 
 }
 
 // Функция проверки совпадения паролей
 function checkPasswordMatch() {
-    return inputPassword.value === inputPasswordConfirmation.value; // Исправлено!
+    return inputPassword.value === inputPasswordConfirmation.value;
 }
 
 // Функция проверки всей формы (возвращает массив ошибок)
@@ -48,7 +48,7 @@ function validateForm() {
     }
 
     // Проверка совпадения паролей
-    if (!inputPasswordConfirmation.value) { // Исправлено!
+    if (!inputPasswordConfirmation.value) { 
         errors.push('Подтвердите пароль');
     } else if (!checkPasswordMatch()) {
         errors.push('Пароли не совпадают');
@@ -88,26 +88,29 @@ buttonRegister.addEventListener('click', function(event) {
         
         console.log('Данные для регистрации:', userData);
         alert('Регистрация прошла успешно!');
+        
+        // Перенаправление на другую страницу только после успешной регистрации
+        window.location.href = 'Main.html';
     } else {
         showErrorsInAlert(errors);
     }
 });
 
-// Реальная проверка паролей при вводе (теперь в alert)
-inputPasswordConfirmation.addEventListener('blur', function() { // Исправлено!
-    if (inputPasswordConfirmation.value && !checkPasswordMatch()) { // Исправлено!
+// Реальная проверка паролей при вводе 
+inputPasswordConfirmation.addEventListener('blur', function() { 
+    if (inputPasswordConfirmation.value && !checkPasswordMatch()) { 
         alert('Пароли не совпадают!');
     }
 });
 
-// Валидация email при вводе (теперь в alert)
+// Валидация email при вводе 
 inputMail.addEventListener('blur', function() {
     if (inputMail.value && !validateEmail(inputMail.value)) {
         alert('Введите корректный email!');
     }
 });
 
-// Валидация логина при вводе (теперь в alert)
+// Валидация логина при вводе 
 inputLogin.addEventListener('blur', function() {
     if (inputLogin.value && inputLogin.value.length < 3) {
         alert('Логин должен содержать минимум 3 символа!');
@@ -123,8 +126,10 @@ function updateButtonState() {
 }
 
 // Добавляем обработчики для динамической проверки
-[inputMail, inputLogin, inputPassword, inputPasswordConfirmation].forEach(input => { // Исправлено!
+[inputMail, inputLogin, inputPassword, inputPasswordConfirmation].forEach(input => {
     input.addEventListener('input', updateButtonState);
 });
 
 checkBox.addEventListener('change', updateButtonState);
+
+updateButtonState();
