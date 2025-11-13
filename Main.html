@@ -7,9 +7,33 @@
     <title></title>
 </head>
 <body>
-    <h1 id="logo">Logo</h1>
+    <a href="Main.html" id="Logo">Logo</a>
     <img src="people.png" alt="🙎‍♂️" id="profile">
     <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A845e026f1a4ec18f4a5cc65499facb345fbe465e433af52027367da1274ee03f&amp;source=constructor" id="mapMain"frameborder="0"></iframe>
+    
+    <div class="chart-container">
+        <div class="circle-chart">
+            <svg viewBox="0 0 36 36" class="circle-chart-svg">
+                <path class="circle-bg"
+                    d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path class="circle"
+                    stroke="#007bff"
+                    stroke-dasharray="0, 100"
+                    d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+            </svg>
+            <div class="circle-content">
+                <div class="amount">208 851,22 ₽</div>
+                <div class="companies">10 компаний</div>
+            </div>
+        </div>
+    </div>
+
     <ul>
     <span>
         <button id="popular_places">Популярные места</button>
@@ -24,5 +48,6 @@
         <button id="WastesButton">Траты</button>
     </ul>
     </footer>
+    <script src="Circle.js"></script>
 </body>
 </html>

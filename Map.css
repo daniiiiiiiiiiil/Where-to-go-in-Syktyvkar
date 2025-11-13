@@ -1,3 +1,11 @@
+#Logo{
+    position: fixed;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration:none; 
+    color:#000;
+    cursor: pointer;
+}
 #mapText{
      text-align: center;
 }

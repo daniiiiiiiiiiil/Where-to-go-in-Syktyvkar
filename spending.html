@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="spending.css">
+    <title>Траты</title>
+</head>
+<body>
+    <a href="Main.html" id="Logo">Logo</a>
+    <ul id="Transitions">
+        <li id="Map"><a href="Map.html" class="A">Карта</a></li>
+        <li id="Spending"><a href="spending.html" class="A">Траты</a></li>
+        <li id="Planned"><a href="spending.html" class="A">Запланированные</a></li>
+    </ul>
+    <div class="chart-container">
+        <div class="circle-chart">
+            <svg viewBox="0 0 36 36" class="circle-chart-svg">
+                <path class="circle-bg"
+                    d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path class="circle"
+                    stroke="#007bff"
+                    stroke-dasharray="0, 100"
+                    d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+            </svg>
+            <div class="circle-content">
+                <div class="amount">208 851,22 ₽</div>
+                <div class="companies">10 компаний</div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+    <ul id="blockUl">
+    <li>
+        <div class="Block">
+            <div class="info">Куда потратили</div>
+            <div class="price">123</div>
+            <div class="Data">когда</div>
+        </div>
+    </li>
+    <li>
+        <div class="Block">
+            <div class="info">Куда потратили</div>
+            <div class="price">123</div>
+            <div class="Data">когда</div>
+        </div>
+    </li>
+    <li>
+        <div class="Block">
+            <div class="info">Куда потратили</div>
+            <div class="price">123</div>
+            <div class="Data">когда</div>
+        </div>
+    </li>
+    <li>
+        <div class="Block">
+            <div class="info">Куда потратили</div>
+            <div class="price">123</div>
+            <div class="Data">когда</div>
+        </div>
+    </li>
+    </ul>
+    </div>
+    <script src="Circle.js"></script>
+</body>
+</html>

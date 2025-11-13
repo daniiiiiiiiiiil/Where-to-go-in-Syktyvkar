@@ -1,5 +1,10 @@
-#logo{
+#Logo{
     position: fixed;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration:none; 
+    color:#000;
+    cursor: pointer;
 }
 #profile{
     position: fixed;
@@ -28,7 +33,135 @@
 }
 
 #MapButton,#WastesButton{
-    margin-top: 800px;
+    margin-top: 1000px;
     width: 49%;
-    height: 150px;
+    height: 100px;
+}
+
+.circle-chart {
+    position: fixed;
+    width: 300px; 
+    height: 300px;
+    top: 520px; 
+    left: 60%; 
+    transform: none; 
+    z-index: 1000;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #f0f0f0;
+    stroke-width: 12; 
+}
+
+.circle-segment {
+    fill: none;
+    stroke-width: 10; 
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: all 1s ease;
+}
+
+.circle-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 2px solid #f0f0f0;
+    width: 180px; 
+}
+
+.amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2px;
+    line-height: 1;
+    font-family: 'Arial', sans-serif;
+}
+
+.currency {
+    font-size: 18px; 
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1;
+    font-family: 'Arial', sans-serif;
+}
+
+.companies {
+    font-size: 14px; 
+    color: #666;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+
+.circle-chart-svg {
+    border-radius: 50%;
+    display: block;
+}
+
+.expenses-legend {
+    position: fixed;
+    top: 500px; 
+    right: 50px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    max-height: 400px; 
+    overflow-y: auto;
+    z-index: 1000;
+    min-width: 200px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 5px; 
+    border-bottom: 1px solid #f0f0f0;
+    gap: 8px; 
+}
+
+.legend-item:last-child {
+    border-bottom: none;
+}
+
+.legend-color {
+    width: 12px; 
+    height: 12px; 
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+.legend-name {
+    flex: 1;
+    font-size: 12px; 
+    font-weight: 500;
+    color: #333;
+    min-width: 80px; 
+}
+
+.legend-amount {
+    font-size: 11px; 
+    font-weight: bold;
+    color: #666;
+    min-width: 60px;
+    text-align: right;
+}
+
+.legend-percentage {
+    font-size: 10px; 
+    color: #888;
+    min-width: 35px; 
+    text-align: right;
 }
