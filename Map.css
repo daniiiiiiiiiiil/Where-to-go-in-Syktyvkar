@@ -5,67 +5,97 @@
     text-decoration:none; 
     color:#000;
     cursor: pointer;
-}
-#mapText{
-     text-align: center;
-}
-
-#NameProduct,#NameRestaurants,#NameBusStop,#NameTheaterСinema{
-    font-size: 24px;
-    margin-left: 40px;
-}
-#NameRestaurants{
-    margin-left: 32%;
-    margin-top: -20px;
-}
-#NameBusStop{
-    margin-left: 62%;
-    margin-top: -20px;
-}
-#NameTheaterСinema{
-    margin-top: 25%;
-    margin-left: 75px;
+}#mapText {
+    text-align: center;
 }
 
-
-#iframeProduct,#iframeRestaurants,#iframeBusStop,#iframeTheaterСinema{
-  margin-left: 40px;
-  width: 500px;
-  height: 400px;
-}
-#iframeRestaurants{
-    margin-left: 32%;
-}
-#iframeBusStop{
-    margin-left: 62%;
-}
-#iframeTheaterСinema{
-    margin-top: 2%;
-    margin-left: 75px;
+ul {
+    list-style: none; 
+    padding: 0;         
+    display: flex;      
+    flex-wrap: wrap;    
+    justify-content: space-around; 
 }
 
+/* Контейнеры внутри списка с фиксированными размерами */
+ul > div {
+    width: 30%;           
+    margin-bottom: 20px;  
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-#buttonShop,#buttonRestaurants,#buttonBusStop,#buttonTheaterСinema{
-    position: absolute;
-    margin-left: -26%;
-    margin-top: 420px;
-    width: 500px;
-    height: 50px;
+/* Заголовки - одинаковый стиль */
+[id^="Name"] {
+    font-size: 20px;    
+    margin-bottom: 5px; 
+    text-align: center;   
 }
-#buttonTheaterСinema{
-     margin-top: 25%;
+
+/* Стиль для iframe с картами - одинаковый размер */
+iframe {
+    width: 100%;        /* или установить фиксированную ширину, например 300px */
+    height: 300px;      /* фиксированная высота для всех карт */
+    border: 1px solid #ccc; 
+    display: block;    
+    margin: 0 auto;    
+    /* Можно добавить одинаковую ширину для всех карт, например: */
+    /* width: 350px; */
 }
-#AdreesMagnit,#AdreesGranat,#AdreesBusStop,#AdreesTheaterСinema{
-  margin-left: 320px;
-  margin-top: -425px;
+
+/* Стиль для кнопок - одинаковый размер и стиль */
+button,
+#buttonShop,
+#buttonRestaurants,
+#buttonBusStop,
+#buttonTheaterСinema,
+#buttonHotels,
+#buttonMalls,
+#buttonGasStations,
+#buttonPolyclinics,
+#buttonSportsCenters,
+#buttonBeautySalons {
+    display: block;     
+    width: 200px; /* фиксированная ширина для всех кнопок */
+    height: 50px; /* фиксированная высота */
+    margin: 10px auto;  
+    padding: 10px;       
+    background-color: #f2f2f2; 
+    border: 1px solid #ccc;  
+    text-align: center;  
+    cursor: pointer;      
+    font-size: 16px; /* одинаковый размер текста в кнопках */
+    box-sizing: border-box;
 }
-#AdreesGranat{
-    margin-left: 44%;
+
+/* Стиль для адресов - одинаковый */
+[id^="Adrees"] {
+    text-align: center;   
+    font-size: 14px;     
+    color: #555;          
+    margin-top: 10px;
+    width: 200px; /* фиксированная ширина */
+    margin-left: auto;
+    margin-right: auto;
 }
-#AdreesBusStop{
-    margin-left: 76%;
+
+/* Общий контейнер для элементов - чтобы все были одинакового размера */
+body > div {
+    width: 30%;            
+    margin-bottom: 20px;  
+    box-sizing: border-box;
+    float: left; 
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-#AdreesTheaterСinema{
-    margin-top: -23%;
-    margin-left: 265px;
+
+/* Очистка float */
+body::after {
+    content: "";
+    display: table;
+    clear: both;
 }
