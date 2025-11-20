@@ -17,7 +17,6 @@ ul {
     justify-content: space-around; 
 }
 
-/* Контейнеры внутри списка с фиксированными размерами */
 ul > div {
     width: 30%;           
     margin-bottom: 20px;  
@@ -27,25 +26,20 @@ ul > div {
     align-items: center;
 }
 
-/* Заголовки - одинаковый стиль */
 [id^="Name"] {
     font-size: 20px;    
     margin-bottom: 5px; 
     text-align: center;   
 }
 
-/* Стиль для iframe с картами - одинаковый размер */
 iframe {
-    width: 100%;        /* или установить фиксированную ширину, например 300px */
-    height: 300px;      /* фиксированная высота для всех карт */
+    width: 100%;        
+    height: 300px;      
     border: 1px solid #ccc; 
     display: block;    
     margin: 0 auto;    
-    /* Можно добавить одинаковую ширину для всех карт, например: */
-    /* width: 350px; */
 }
 
-/* Стиль для кнопок - одинаковый размер и стиль */
 button,
 #buttonShop,
 #buttonRestaurants,
@@ -58,30 +52,27 @@ button,
 #buttonSportsCenters,
 #buttonBeautySalons {
     display: block;     
-    width: 200px; /* фиксированная ширина для всех кнопок */
-    height: 50px; /* фиксированная высота */
+    width: 200px; 
+    height: 50px; 
     margin: 10px auto;  
     padding: 10px;       
     background-color: #f2f2f2; 
     border: 1px solid #ccc;  
     text-align: center;  
     cursor: pointer;      
-    font-size: 16px; /* одинаковый размер текста в кнопках */
+    font-size: 16px; 
     box-sizing: border-box;
 }
-
-/* Стиль для адресов - одинаковый */
 [id^="Adrees"] {
     text-align: center;   
     font-size: 14px;     
     color: #555;          
     margin-top: 10px;
-    width: 200px; /* фиксированная ширина */
+    width: 200px; 
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Общий контейнер для элементов - чтобы все были одинакового размера */
 body > div {
     width: 30%;            
     margin-bottom: 20px;  
@@ -93,7 +84,6 @@ body > div {
     align-items: center;
 }
 
-/* Очистка float */
 body::after {
     content: "";
     display: table;

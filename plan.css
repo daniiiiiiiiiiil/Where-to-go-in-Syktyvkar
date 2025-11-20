@@ -1,0 +1,128 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #2c5530;
+            color: white;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .calendar-section {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .hikes-section {
+            flex: 2;
+            min-width: 300px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .calendar {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .calendar th, .calendar td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        .calendar th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        .calendar .today {
+            background-color: #e8f4e8;
+            font-weight: bold;
+        }
+        
+        .calendar .hike-day {
+            background-color: #c8e6c9;
+            cursor: pointer;
+        }
+        
+        .hike-list {
+            list-style-type: none;
+        }
+        
+        .hike-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #2c5530;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        
+        .hike-title {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #2c5530;
+        }
+        
+        .hike-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .detail-icon {
+            color: #2c5530;
+        }
+        
+        .hike-description {
+            margin-top: 10px;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+        }
