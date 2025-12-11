@@ -1,0 +1,49 @@
+[ {
+  "id" : null,
+  "name" : "Еда",
+  "icon" : "🍔",
+  "color" : "#FF6B6B",
+  "user" : null
+}, {
+  "id" : null,
+  "name" : "Транспорт",
+  "icon" : "🚗",
+  "color" : "#4ECDC4",
+  "user" : null
+}, {
+  "id" : null,
+  "name" : "Кафе",
+  "icon" : "☕",
+  "color" : "#FFD166",
+  "user" : null
+}, {
+  "id" : null,
+  "name" : "Развлечения",
+  "icon" : "🎬",
+  "color" : "#6A0572",
+  "user" : null
+}, {
+  "id" : null,
+  "name" : "Покупки",
+  "icon" : "🛍️",
+  "color" : "#118AB2",
+  "user" : null
+}, {
+  "id" : null,
+  "name" : "Здоровье",
+  "icon" : "💊",
+  "color" : "#06D6A0",
+  "user" : null
+}, {
+  "id" : null,
+  "name" : "Образование",
+  "icon" : "📚",
+  "color" : "#EF476F",
+  "user" : null
+}, {
+  "id" : null,
+  "name" : "Прочее",
+  "icon" : "📦",
+  "color" : "#073B4C",
+  "user" : null
+} ]

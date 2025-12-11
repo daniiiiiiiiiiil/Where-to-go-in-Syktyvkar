@@ -1,0 +1,75 @@
+# HELP.md
+HELP.md
+
+# Gradle
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Maven (на всякий случай)
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDEA
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+*.log.*
+*.gz
+app.log*
+
+# Application Properties
+application-local.properties
+application-dev.properties
+
+# Database
+*.db
+*.sql
+*.h2.db
+
+# Compiled files
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE временные файлы
+*.swp
+*.swo
+*~
