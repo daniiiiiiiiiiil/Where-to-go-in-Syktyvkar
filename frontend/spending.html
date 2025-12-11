@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="spending.css">
+    <title>Траты | FinMap</title>
+</head>
+<body>
+    <a href="Main.html" id="Logo">FinMap</a>
+    
+    <!-- Навигация -->
+    <ul id="Transitions">
+        <li id="Map"><a href="Map.html" class="A">Карта</a></li>
+        <li id="Spending"><a href="spending.html" class="A">Траты</a></li>
+        <li id="Planned"><a href="plan.html" class="A">Запланированные</a></li>
+    </ul>
+    
+    <!-- Общая сумма -->
+    <div class="total-summary">
+        <h2>Общие расходы за месяц</h2>
+        <div class="total-amount">208 851 ₽</div>
+        <div class="companies">10 компаний • 54 транзакции</div>
+    </div>
+    
+    <!-- Фильтры по периоду -->
+    <div class="period-selector">
+        <button class="period-button active">За месяц</button>
+        <button class="period-button">За неделю</button>
+        <button class="period-button">За день</button>
+        <button class="period-button">За год</button>
+    </div>
+    
+    <!-- Основной контейнер с кругом и легендой -->
+    <div class="dashboard-container">
+        <!-- Круговая диаграмма -->
+        <div class="circle-chart">
+            <svg viewBox="0 0 36 36" class="circle-chart-svg">
+                <path class="circle-bg"
+                    d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <!-- Сегменты будут добавлены через JS -->
+            </svg>
+            <div class="circle-content">
+                <div class="amount">208 851 ₽</div>
+                <div class="companies">10 компаний</div>
+            </div>
+        </div>
+        
+        <!-- Легенда расходов -->
+        <div class="expenses-legend">
+            <div class="legend-header">Расходы по категориям</div>
+            <!-- Легенда будет заполнена через JS -->
+        </div>
+    </div>
+    
+    <!-- Последние транзакции -->
+    <div class="transactions-section">
+        <h2 class="transactions-header">Последние транзакции</h2>
+        <ul id="blockUl">
+            <li>
+                <div class="Block">
+                    <div class="info">Магнит - Продукты</div>
+                    <div class="price">4 250</div>
+                    <div class="Data">Сегодня, 14:30</div>
+                </div>
+            </li>
+            <li>
+                <div class="Block">
+                    <div class="info">Яндекс.Такси</div>
+                    <div class="price">850</div>
+                    <div class="Data">Сегодня, 10:15</div>
+                </div>
+            </li>
+            <li>
+                <div class="Block">
+                    <div class="info">Ресторан "Гранатный"</div>
+                    <div class="price">3 200</div>
+                    <div class="Data">Вчера, 19:45</div>
+                </div>
+            </li>
+            <li>
+                <div class="Block">
+                    <div class="info">АЗС Лукойл</div>
+                    <div class="price">2 800</div>
+                    <div class="Data">2 дня назад</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Кнопка добавления -->
+    <div class="add-expense">+</div>
+    
+    <script src="Circle.js"></script>
+</body>
+</html>

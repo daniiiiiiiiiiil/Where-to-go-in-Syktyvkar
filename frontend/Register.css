@@ -1,0 +1,366 @@
+/* Сброс и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* Контейнер регистрации */
+#RegisterBlock {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+#RegisterBlock::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+/* Заголовок */
+#nameBlock {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: #2d3748;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#nameBlock::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* Поля ввода */
+.input-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#Login, #Password, #PasswordСonfirmation, #Mail {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    font-size: 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 15px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    outline: none;
+    color: #2d3748;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder {
+    color: #a0aec0;
+}
+
+/* Чекбокс */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border: 2px solid #e2e8f0;
+}
+
+#CheckBox {
+    width: 22px;
+    height: 22px;
+    margin-right: 15px;
+    cursor: pointer;
+    accent-color: #667eea;
+    flex-shrink: 0;
+}
+
+#approval {
+    font-size: 16px;
+    color: #4a5568;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Кнопка регистрации */
+#buttonRegister {
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+
+#buttonRegister::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+#buttonRegister:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+}
+
+#buttonRegister:hover::before {
+    left: 100%;
+}
+
+#buttonRegister:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+#buttonRegister:disabled {
+    background: #cbd5e0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Ссылка на вход */
+#entrance {
+    text-align: center;
+    font-size: 16px;
+    color: #718096;
+    margin-top: 20px;
+}
+
+#entrance a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 2px 4px;
+}
+
+#entrance a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #667eea;
+    transition: width 0.3s ease;
+}
+
+#entrance a:hover::after {
+    width: 100%;
+}
+
+#entrance a:hover {
+    color: #764ba2;
+}
+
+/* Валидация */
+.error-message {
+    color: #e53e3e;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+input:invalid {
+    border-color: #fc8181;
+}
+
+input:valid {
+    border-color: #48bb78;
+}
+
+/* Иконки для полей ввода */
+.input-group {
+    position: relative;
+}
+
+.input-group::before {
+    position: absolute;
+    right: 20px;
+    top: 45px;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#RegisterBlock {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Декоративные элементы */
+#RegisterBlock::after {
+    content: '🔐';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    opacity: 0.1;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #RegisterBlock {
+        padding: 40px 25px;
+        border-radius: 25px;
+    }
+    
+    #nameBlock {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        height: 55px;
+        font-size: 16px;
+    }
+    
+    #buttonRegister {
+        height: 60px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    #RegisterBlock {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+    
+    #nameBlock {
+        font-size: 28px;
+    }
+    
+    .checkbox-group {
+        padding: 12px;
+    }
+    
+    #approval {
+        font-size: 14px;
+    }
+}
+
+/* Эффект фокуса для доступности */
+input:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Плавное изменение placeholder */
+input::placeholder {
+    transition: opacity 0.3s ease;
+}
+
+input:focus::placeholder {
+    opacity: 0.5;
+}
+
+/* Сообщение об успехе */
+.success-message {
+    color: #48bb78;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f0fff4;
+    border-radius: 10px;
+    border: 2px solid #c6f6d5;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

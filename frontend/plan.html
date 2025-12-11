@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="plan.css">
+    <title>План походов</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Запланированные походы</h1>
+            <p>Ваши предстоящие приключения на природе</p>
+        </header>
+        
+        <div class="content">
+            <section class="calendar-section">
+                <h2>Календарь походов</h2>
+                <div class="calendar-wrapper">
+                    <div class="calendar-header">
+                        <button id="prev-month" class="nav-btn">◀</button>
+                        <h3 id="current-month-year">Июль 2025</h3>
+                        <button id="next-month" class="nav-btn">▶</button>
+                    </div>
+                    <table class="calendar" id="calendar">
+                        <thead>
+                            <tr>
+                                <th>Пн</th>
+                                <th>Вт</th>
+                                <th>Ср</th>
+                                <th>Чт</th>
+                                <th>Пт</th>
+                                <th>Сб</th>
+                                <th>Вс</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendar-body">
+                            <!-- Календарь будет сгенерирован через JavaScript -->
+                        </tbody>
+                    </table>
+                    <div class="selected-date-info" id="selected-date-info">
+                        <p>Выберите дату для просмотра событий</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="hikes-section">
+                <h2>Прогулки и места в Сыктывкаре</h2>
+                <ul class="hike-list" id="hike-list">
+                    <li class="hike-item" data-date="2025-07-12">
+                        <h3 class="hike-title">Национальный музей Республики Коми</h3>
+                        <div class="hike-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">📍</span>
+                                <span>ул. Коммунистическая, центр города</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">👥</span>
+                                <span>Группа (8–15 человек)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📅</span>
+                                <span>12 июля 2025</span>
+                            </div>
+                        </div>
+                        <p class="hike-description">Экскурсия по экспозициям музея: история, этнография и природа Коми. Подходит для тех, кто интересуется культурой региона. Включает гида и время для самостоятельного осмотра.</p>
+                    </li>
+
+                    <li class="hike-item" data-date="2025-07-19">
+                        <h3 class="hike-title">Набережная реки Сысола — вечерняя прогулка</h3>
+                        <div class="hike-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">📍</span>
+                                <span>Набережная Сысолы, рядом с парком</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">👥</span>
+                                <span>Малая группа (до 10 человек)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📅</span>
+                                <span>19 июля 2025</span>
+                            </div>
+                        </div>
+                        <p class="hike-description">Неспешная прогулка по набережной с видом на реку, фото-стопы и рассказ о городской архитектуре. Легкий маршрут, подходит для всей семьи.</p>
+                    </li>
+
+                    <li class="hike-item" data-date="2025-07-26">
+                        <h3 class="hike-title">Городской парк культуры и отдыха — пикник и игры</h3>
+                        <div class="hike-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">📍</span>
+                                <span>Городской парк (парк им. С. Кирова)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">👥</span>
+                                <span>Открытая группа (до 20 человек)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📅</span>
+                                <span>26 июля 2025</span>
+                            </div>
+                        </div>
+                        <p class="hike-description">Дневной выезд в парк: пикник, подвижные игры, мини-квесты для участников. Подходит для тех, кто любит активный, но спокойный отдых на природе.</p>
+                    </li>
+
+                    <li class="hike-item" data-date="2025-08-02">
+                        <h3 class="hike-title">Государственный театр оперы и балета Республики Коми — вечерние представления</h3>
+                        <div class="hike-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">📍</span>
+                                <span>ул. Катаева, театр</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">👥</span>
+                                <span>Группа (6–12 человек)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📅</span>
+                                <span>2 августа 2025</span>
+                            </div>
+                        </div>
+                        <p class="hike-description">Совместный поход на спектакль с последующим обсуждением в кафе. Подходит тем, кто интересуется культурной жизнью города.</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

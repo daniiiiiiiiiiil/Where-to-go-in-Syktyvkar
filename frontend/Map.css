@@ -1,0 +1,431 @@
+/* Сброс и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+    min-height: 100vh;
+    color: #2c3e50;
+    padding-bottom: 40px;
+}
+
+/* Логотип */
+#Logo {
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    font-size: 32px;
+    font-weight: 800;
+    text-decoration: none;
+    color: #3498db;
+    cursor: pointer;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(52, 152, 219, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(52, 152, 219, 0.1);
+}
+
+#Logo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(52, 152, 219, 0.3);
+    background: #3498db;
+    color: white;
+}
+
+/* Заголовок */
+#mapText {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    color: #2c3e50;
+    margin: 100px 0 40px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#mapText::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+}
+
+/* Контейнер карт */
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Карточка с картой */
+ul > div,
+body > div {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+ul > div:hover,
+body > div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Декоративный элемент для карточек */
+ul > div::before,
+body > div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+}
+
+/* Заголовки категорий */
+[id^="Name"] {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50;
+    position: relative;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+[id^="Name"]::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+/* Карты */
+iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    border: 2px solid #ecf0f1;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+ul > div:hover iframe,
+body > div:hover iframe {
+    border-color: #3498db;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
+}
+
+/* Кнопки */
+button,
+#buttonShop,
+#buttonRestaurants,
+#buttonBusStop,
+#buttonTheaterСinema,
+#buttonHotels,
+#buttonMalls,
+#buttonGasStations,
+#buttonPolyclinics,
+#buttonSportsCenters,
+#buttonBeautySalons {
+    width: 100%;
+    height: 50px;
+    margin: 15px 0;
+    padding: 0 20px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover,
+#buttonShop:hover,
+#buttonRestaurants:hover,
+#buttonBusStop:hover,
+#buttonTheaterСinema:hover,
+#buttonHotels:hover,
+#buttonMalls:hover,
+#buttonGasStations:hover,
+#buttonPolyclinics:hover,
+#buttonSportsCenters:hover,
+#buttonBeautySalons:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+    background: linear-gradient(135deg, #2980b9, #3498db);
+}
+
+button:active,
+#buttonShop:active,
+#buttonRestaurants:active,
+#buttonBusStop:active,
+#buttonTheaterСinema:active,
+#buttonHotels:active,
+#buttonMalls:active,
+#buttonGasStations:active,
+#buttonPolyclinics:active,
+#buttonSportsCenters:active,
+#buttonBeautySalons:active {
+    transform: translateY(0);
+}
+
+/* Иконки для кнопок через псевдоэлементы */
+#buttonShop::before { content: "🛒"; }
+#buttonRestaurants::before { content: "🍽️"; }
+#buttonBusStop::before { content: "🚏"; }
+#buttonTheaterСinema::before { content: "🎭"; }
+#buttonHotels::before { content: "🏨"; }
+#buttonMalls::before { content: "🏬"; }
+#buttonGasStations::before { content: "⛽"; }
+#buttonPolyclinics::before { content: "🏥"; }
+#buttonSportsCenters::before { content: "💪"; }
+#buttonBeautySalons::before { content: "💇"; }
+
+/* Адреса */
+[id^="Adrees"] {
+    text-align: center;
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #ecf0f1;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+ul > div:hover [id^="Adrees"],
+body > div:hover [id^="Adrees"] {
+    background: #edf7ff;
+    border-color: #d6eaf8;
+    color: #3498db;
+}
+
+/* Отдельные блоки (вне ul) */
+body > div {
+    float: none;
+    margin-left: 0;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 350px;
+    margin-right: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Контейнер для блоков вне ul */
+body {
+    text-align: center;
+}
+
+body::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    ul {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 25px;
+    }
+    
+    body > div {
+        max-width: 320px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    ul {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    
+    body > div {
+        max-width: 100%;
+        margin-right: 0;
+        display: block;
+        margin: 0 auto 25px;
+    }
+    
+    #mapText {
+        font-size: 32px;
+        margin: 80px 0 30px;
+    }
+    
+    #Logo {
+        font-size: 24px;
+        padding: 10px 20px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    ul > div,
+    body > div {
+        padding: 20px;
+    }
+    
+    [id^="Name"] {
+        font-size: 20px;
+    }
+    
+    iframe {
+        height: 200px;
+    }
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+ul > div,
+body > div {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+ul > div:nth-child(1) { animation-delay: 0.1s; }
+ul > div:nth-child(2) { animation-delay: 0.2s; }
+ul > div:nth-child(3) { animation-delay: 0.3s; }
+body > div:nth-of-type(1) { animation-delay: 0.4s; }
+body > div:nth-of-type(2) { animation-delay: 0.5s; }
+body > div:nth-of-type(3) { animation-delay: 0.6s; }
+body > div:nth-of-type(4) { animation-delay: 0.7s; }
+body > div:nth-of-type(5) { animation-delay: 0.8s; }
+body > div:nth-of-type(6) { animation-delay: 0.9s; }
+body > div:nth-of-type(7) { animation-delay: 1.0s; }
+
+/* Эффект блеска на кнопках */
+button::after,
+#buttonShop::after,
+#buttonRestaurants::after,
+#buttonBusStop::after,
+#buttonTheaterСinema::after,
+#buttonHotels::after,
+#buttonMalls::after,
+#buttonGasStations::after,
+#buttonPolyclinics::after,
+#buttonSportsCenters::after,
+#buttonBeautySalons::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+button:hover::after,
+#buttonShop:hover::after,
+#buttonRestaurants:hover::after,
+#buttonBusStop:hover::after,
+#buttonTheaterСinema:hover::after,
+#buttonHotels:hover::after,
+#buttonMalls:hover::after,
+#buttonGasStations:hover::after,
+#buttonPolyclinics:hover::after,
+#buttonSportsCenters:hover::after,
+#buttonBeautySalons:hover::after {
+    opacity: 1;
+    left: 100%;
+}
+
+/* Кастомный скроллбар */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #2980b9, #27ae60);
+}
+
+/* Загрузочная анимация для iframe */
+iframe {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+iframe:not([src=""]) {
+    background: white;
+    animation: none;
+}

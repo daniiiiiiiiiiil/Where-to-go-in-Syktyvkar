@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Register.css">
+    <title>Регистрация | FinMap</title>
+</head>
+<body>
+    <div id="RegisterBlock">
+        <h1 id="nameBlock">Регистрация</h1>
+        
+        <div class="input-group">
+            <div id="Login">Логин</div>
+            <input id="inputLogin" type="text" placeholder="Введите ваш логин" required>
+        </div>
+        
+        <div class="input-group">
+            <div id="Password">Пароль</div>
+            <input id="inputPassword" type="password" placeholder="Введите пароль" required>
+        </div>
+        
+        <div class="input-group">
+            <div id="PasswordСonfirmation">Подтвердите пароль</div>
+            <input id="inputPasswordСonfirmation" type="password" placeholder="Повторите пароль" required>
+        </div>
+        
+        <div class="input-group">
+            <div id="Mail">Почта</div>
+            <input id="inputMail" type="email" placeholder="example@mail.com" required>
+        </div>
+        
+        <div class="checkbox-group">
+            <input type="checkbox" id="CheckBox" required>
+            <label for="CheckBox" id="approval">Я согласен на обработку персональных данных</label>
+        </div>
+        
+        <button id="buttonRegister">Создать аккаунт</button>
+        
+        <div id="entrance">Уже есть аккаунт? <a href="entrance.html">Войти</a></div>
+    </div>
+    
+    <script src="Register.js"></script>
+</body>
+</html>
