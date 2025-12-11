@@ -1,81 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Map.css">
-    <title>Карты</title>
+    <title>Карты | FinTrack</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <a href="Main.html" id="Logo">Logo</a>
-    <h1 id="mapText" a>Карты</h1>
-    <ul>
-    <div>
-        <div id="NameProduct">Продуктовые магазины</div>
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
-        <button id="buttonShop">Больше магазинов</button>
-        <div id="AdreesMagnit">Советская ул., 58, Сыктывкар</div>
-    </div>
-    <div>
-        <div id="NameRestaurants">Кафе/Рестораны</div>
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
-        <button id="buttonRestaurants">Больше ресторанов и кафе</button>
-        <div id="AdreesGranat">Интернациональная ул., 126, Сыктывкар</div>
-    </div>
-    <div>
-        <div id="NameBusStop">Автобусные остановки</div>
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
-        <button id="buttonBusStop">Больше автобусных остановок</button>
-        <div id="AdreesBusStop">Октябрьский просп., 93, Люберцы</div>
-    </div>
-     </ul>
-    <div>
-        <div id="NameTheaterСinema">Театр/Кинотеатр</div>
-        <iframe id="iframeTheaterСinema" src="https://yandex.ru/map-widget/v1/?um=constructor%3A1aa99bfe0131e40f0ee2a64429396786b708d23a27f0796101b02ba80e62f5ae&amp;source=constructor"  frameborder="0"></iframe>
-        <button id="buttonTheaterСinema">Больше театров и кинотеатров</button>
-        <div id="AdreesTheaterСinema">Октябрьский просп., 141, корп. 5, Сыктывкар</div>
+    <!-- Шапка -->
+    <header class="site-header">
+        <div class="header-content">
+            <a href="Main.html" class="logo">FinTrack</a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="Maps.html" class="nav-link active">
+                        <i class="fas fa-map"></i>
+                        <span>Карта</span>
+                    </a></li>
+                    <li><a href="spending.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Траты</span>
+                    </a></li>
+                    <li><a href="Map.html" class="nav-link">
+                        <i class="fas fa-fire"></i>
+                        <span>Популярные места</span>
+                    </a></li>
+                    <li><a href="plan.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Запланированные места</span>
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <img src="people.png" alt="Профиль" class="profile-img">
+                <span class="profile-name">Иван П.</span>
+            </div>
+        </div>
+    </header>
+
+    <h1 id="mapText">Карты</h1>
+    
+    <!-- Контейнер для всех карт (10 карточек) -->
+    <div class="maps-container">
+        <!-- 1. Продуктовые магазины -->
+        <div class="map-card">
+            <div class="map-title">Продуктовые магазины</div>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
+            <button class="map-button" id="buttonShop">Больше магазинов</button>
+            <div class="map-address">Советская ул., 58, Сыктывкар</div>
+        </div>
+        
+        <!-- 2. Кафе/Рестораны -->
+        <div class="map-card">
+            <div class="map-title">Кафе/Рестораны</div>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
+            <button class="map-button" id="buttonRestaurants">Больше ресторанов и кафе</button>
+            <div class="map-address">Интернациональная ул., 126, Сыктывкар</div>
+        </div>
+        
+        <!-- 3. Автобусные остановки -->
+        <div class="map-card">
+            <div class="map-title">Автобусные остановки</div>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
+            <button class="map-button" id="buttonBusStop">Больше автобусных остановок</button>
+            <div class="map-address">Октябрьский просп., 93, Люберцы</div>
+        </div>
+        
+        <!-- 4. Театр/Кинотеатр -->
+        <div class="map-card">
+            <div class="map-title">Театр/Кинотеатр</div>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1aa99bfe0131e40f0ee2a64429396786b708d23a27f0796101b02ba80e62f5ae&amp;source=constructor" frameborder="0"></iframe>
+            <button class="map-button" id="buttonTheaterCinema">Больше театров и кинотеатров</button>
+            <div class="map-address">Октябрьский просп., 141, корп. 5, Сыктывкар</div>
+        </div>
+        
+        <!-- 5. Отели -->
+        <div class="map-card">
+            <div class="map-title">Отели</div>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
+            <button class="map-button" id="buttonHotels">Больше отелей</button>
+            <div class="map-address">Коммунистическая ул., 67, Сыктывкар</div>
+        </div>
+        
+        <!-- 6. ТЦ и торговые центры -->
+        <div class="map-card">
+            <div class="map-title">ТЦ и торговые центры</div>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
+            <button class="map-button" id="buttonMalls">Больше ТЦ</button>
+            <div class="map-address">Коммунистическая ул., 50, Сыктывкар</div>
+        </div>
+        
+        <!-- 7. АЗС -->
+        <div class="map-card">
+            <div class="map-title">АЗС</div>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
+            <button class="map-button" id="buttonGasStations">Больше АЗС</button>
+            <div class="map-address">ул. Пушкина, 85, Сыктывкар</div>
+        </div>
+        
+        <!-- 8. Поликлиники -->
+        <div class="map-card">
+            <div class="map-title">Поликлиники</div>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
+            <button class="map-button" id="buttonPolyclinics">Больше поликлиник</button>
+            <div class="map-address">Коммунистическая ул., 41, Сыктывкар</div>
+        </div>
+        
+        <!-- 9. Спортзалы -->
+        <div class="map-card">
+            <div class="map-title">Спортзалы</div>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
+            <button class="map-button" id="buttonSportsCenters">Больше спортзалов</button>
+            <div class="map-address">Советская ул., 8, Сыктывкар</div>
+        </div>
+        
+        <!-- 10. Салоны красоты -->
+        <div class="map-card">
+            <div class="map-title">Салоны красоты</div>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
+            <button class="map-button" id="buttonBeautySalons">Больше салонов красоты</button>
+            <div class="map-address">Советская ул., 16, Сыктывкар</div>
+        </div>
     </div>
 
-    <div>
-        <div id="NameHotels">Отели</div>
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor"  frameborder="0"></iframe>
-        <button id="buttonHotels">Больше отелей</button>
-        <div id="AdreesHotels">Коммунистическая ул., 67, Сыктывкар</div>
-    </div>
-
-    <div>
-        <div id="NameMalls">ТЦ и торговые центры</div>
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
-        <button id="buttonMalls">Больше ТЦ</button>
-        <div id="AdreesMalls">Коммунистическая ул., 50, Сыктывкар</div>
-    </div>
-
-    <div>
-        <div id="NameGasStations">АЗС</div>
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
-        <button id="buttonGasStations">Больше АЗС</button>
-        <div id="AdreesGasStations">ул. Пушкина, 85, Сыктывкар</div>
-    </div>
-
-    <div>
-        <div id="NamePolyclinics">Поликлиники</div>
-       <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor"frameborder="0"></iframe>
-        <button id="buttonPolyclinics">Больше поликлиник</button>
-        <div id="AdreesPolyclinics">Коммунистическая ул., 41, Сыктывкар</div>
-    </div>
-
-    <div>
-        <div id="NameSportsCenters">Спортзалы</div>
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
-        <button id="buttonSportsCenters">Больше спортзалов</button>
-        <div id="AdreesSportsCenters">Советская ул., 8, Сыктывкар</div>
-    </div>
-
-    <div>
-        <div id="NameBeautySalons">Салоны красоты парикмахерские</div>
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5a0cbebf09d9fb051950519d86f1a0aff37a7ef146b99668c2f51266e8bf0b9c&amp;source=constructor" frameborder="0"></iframe>
-        <button id="buttonBeautySalons">Больше салонов красоты и парикмахерские</button>
-        <div id="AdreesBeautySalons">Советская ул., 16, Сыктывкар</div>
-    </div>
+    <script src="Map.js"></script>
 </body>
 </html>

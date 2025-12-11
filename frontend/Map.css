@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -10,43 +11,257 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
     min-height: 100vh;
     color: #2c3e50;
-    padding-bottom: 40px;
+    padding-top: 70px; 
 }
 
-/* Логотип */
-#Logo {
+/* ШАПКА */
+.site-header {
     position: fixed;
-    top: 20px;
-    left: 30px;
-    font-size: 32px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 10px 5%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ЛОГОТИП */
+.logo {
+    font-size: 28px;
     font-weight: 800;
     text-decoration: none;
-    color: #3498db;
-    cursor: pointer;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 12px 24px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(52, 152, 219, 0.2);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(52, 152, 219, 0.1);
+    color: #2c3e50;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
-#Logo:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(52, 152, 219, 0.3);
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* НАВИГАЦИЯ - КНОПКИ В РЯДУ */
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+/* ЕДИНЫЙ СТИЛЬ ВСЕХ КНОПОК */
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    min-width: 100px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    background: white;
+}
+
+.nav-link i {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #3498db;
+}
+
+/* АКТИВНАЯ КНОПКА */
+.nav-link.active {
     background: #3498db;
+    color: white;
+    border-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.nav-link.active i {
     color: white;
 }
 
-/* Заголовок */
+/* ХОВЕР */
+.nav-link:hover:not(.active) {
+    background: #f8f9fa;
+    border-color: #3498db;
+    transform: translateY(-1px);
+}
+
+/* ПРОФИЛЬ */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3498db;
+}
+
+.profile-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* АДАПТИВНОСТЬ ШАПКИ */
+@media (max-width: 1200px) {
+    .header-content {
+        gap: 20px;
+    }
+    
+    .nav-link {
+        min-width: 90px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .nav-link i {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .site-header {
+        padding: 10px 3%;
+    }
+    
+    .header-content {
+        flex-wrap: wrap;
+    }
+    
+    .main-nav {
+        order: 3;
+        flex: 100%;
+        margin-top: 15px;
+    }
+    
+    .nav-list {
+        justify-content: space-between;
+        gap: 8px;
+    }
+    
+    .nav-link {
+        flex: 1;
+        height: 45px;
+    }
+    
+    body {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 8px 3%;
+    }
+    
+    .logo {
+        font-size: 22px;
+    }
+    
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    
+    .nav-link {
+        flex: 0 0 calc(50% - 6px);
+        height: 40px;
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+    
+    .nav-link i {
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+    
+    .profile-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .profile-name {
+        font-size: 13px;
+    }
+    
+    body {
+        padding-top: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo {
+        align-self: flex-start;
+    }
+    
+    .user-profile {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+    
+    .main-nav {
+        margin-top: 10px;
+        order: 2;
+    }
+    
+    .nav-list {
+        width: 100%;
+    }
+    
+    .nav-link {
+        flex: 0 0 calc(50% - 6px);
+        height: 45px;
+        font-size: 12px;
+    }
+    
+    body {
+        padding-top: 130px;
+    }
+}
+
+/* Заголовок карт */
 #mapText {
     text-align: center;
     font-size: 42px;
     font-weight: 800;
     color: #2c3e50;
-    margin: 100px 0 40px;
+    margin: 40px 0;
     position: relative;
     padding-bottom: 20px;
 }
@@ -63,21 +278,18 @@ body {
     border-radius: 2px;
 }
 
-/* Контейнер карт */
-ul {
-    list-style: none;
-    padding: 0;
+/* КОНТЕЙНЕР ДЛЯ КАРТ*/
+.maps-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
     padding: 0 20px;
 }
 
-/* Карточка с картой */
-ul > div,
-body > div {
+/* КАРТОЧКА КАРТЫ */
+.map-card {
     background: white;
     border-radius: 20px;
     padding: 25px;
@@ -89,17 +301,16 @@ body > div {
     border: 1px solid rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
-ul > div:hover,
-body > div:hover {
+.map-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
 /* Декоративный элемент для карточек */
-ul > div::before,
-body > div::before {
+.map-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -110,7 +321,7 @@ body > div::before {
 }
 
 /* Заголовки категорий */
-[id^="Name"] {
+.map-title {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -121,7 +332,7 @@ body > div::before {
     width: 100%;
 }
 
-[id^="Name"]::after {
+.map-title::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -143,24 +354,13 @@ iframe {
     transition: all 0.3s ease;
 }
 
-ul > div:hover iframe,
-body > div:hover iframe {
+.map-card:hover iframe {
     border-color: #3498db;
     box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
 }
 
 /* Кнопки */
-button,
-#buttonShop,
-#buttonRestaurants,
-#buttonBusStop,
-#buttonTheaterСinema,
-#buttonHotels,
-#buttonMalls,
-#buttonGasStations,
-#buttonPolyclinics,
-#buttonSportsCenters,
-#buttonBeautySalons {
+.map-button {
     width: 100%;
     height: 50px;
     margin: 15px 0;
@@ -181,41 +381,21 @@ button,
     overflow: hidden;
 }
 
-button:hover,
-#buttonShop:hover,
-#buttonRestaurants:hover,
-#buttonBusStop:hover,
-#buttonTheaterСinema:hover,
-#buttonHotels:hover,
-#buttonMalls:hover,
-#buttonGasStations:hover,
-#buttonPolyclinics:hover,
-#buttonSportsCenters:hover,
-#buttonBeautySalons:hover {
+.map-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
     background: linear-gradient(135deg, #2980b9, #3498db);
 }
 
-button:active,
-#buttonShop:active,
-#buttonRestaurants:active,
-#buttonBusStop:active,
-#buttonTheaterСinema:active,
-#buttonHotels:active,
-#buttonMalls:active,
-#buttonGasStations:active,
-#buttonPolyclinics:active,
-#buttonSportsCenters:active,
-#buttonBeautySalons:active {
+.map-button:active {
     transform: translateY(0);
 }
 
-/* Иконки для кнопок через псевдоэлементы */
+/* Иконки для кнопок */
 #buttonShop::before { content: "🛒"; }
 #buttonRestaurants::before { content: "🍽️"; }
 #buttonBusStop::before { content: "🚏"; }
-#buttonTheaterСinema::before { content: "🎭"; }
+#buttonTheaterCinema::before { content: "🎭"; }
 #buttonHotels::before { content: "🏨"; }
 #buttonMalls::before { content: "🏬"; }
 #buttonGasStations::before { content: "⛽"; }
@@ -224,7 +404,7 @@ button:active,
 #buttonBeautySalons::before { content: "💇"; }
 
 /* Адреса */
-[id^="Adrees"] {
+.map-address {
     text-align: center;
     font-size: 14px;
     color: #7f8c8d;
@@ -238,87 +418,10 @@ button:active,
     transition: all 0.3s ease;
 }
 
-ul > div:hover [id^="Adrees"],
-body > div:hover [id^="Adrees"] {
+.map-card:hover .map-address {
     background: #edf7ff;
     border-color: #d6eaf8;
     color: #3498db;
-}
-
-/* Отдельные блоки (вне ul) */
-body > div {
-    float: none;
-    margin-left: 0;
-    margin-bottom: 30px;
-    width: 100%;
-    max-width: 350px;
-    margin-right: 30px;
-    display: inline-block;
-    vertical-align: top;
-}
-
-/* Контейнер для блоков вне ul */
-body {
-    text-align: center;
-}
-
-body::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-/* Адаптивность */
-@media (max-width: 1200px) {
-    ul {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 25px;
-    }
-    
-    body > div {
-        max-width: 320px;
-        margin-right: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    ul {
-        grid-template-columns: 1fr;
-        padding: 0 15px;
-    }
-    
-    body > div {
-        max-width: 100%;
-        margin-right: 0;
-        display: block;
-        margin: 0 auto 25px;
-    }
-    
-    #mapText {
-        font-size: 32px;
-        margin: 80px 0 30px;
-    }
-    
-    #Logo {
-        font-size: 24px;
-        padding: 10px 20px;
-        left: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    ul > div,
-    body > div {
-        padding: 20px;
-    }
-    
-    [id^="Name"] {
-        font-size: 20px;
-    }
-    
-    iframe {
-        height: 200px;
-    }
 }
 
 /* Анимации */
@@ -333,35 +436,25 @@ body::after {
     }
 }
 
-ul > div,
-body > div {
+.map-card {
     animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
 }
 
-ul > div:nth-child(1) { animation-delay: 0.1s; }
-ul > div:nth-child(2) { animation-delay: 0.2s; }
-ul > div:nth-child(3) { animation-delay: 0.3s; }
-body > div:nth-of-type(1) { animation-delay: 0.4s; }
-body > div:nth-of-type(2) { animation-delay: 0.5s; }
-body > div:nth-of-type(3) { animation-delay: 0.6s; }
-body > div:nth-of-type(4) { animation-delay: 0.7s; }
-body > div:nth-of-type(5) { animation-delay: 0.8s; }
-body > div:nth-of-type(6) { animation-delay: 0.9s; }
-body > div:nth-of-type(7) { animation-delay: 1.0s; }
+/* Задержки анимации для каждой карточки */
+.map-card:nth-child(1) { animation-delay: 0.1s; }
+.map-card:nth-child(2) { animation-delay: 0.2s; }
+.map-card:nth-child(3) { animation-delay: 0.3s; }
+.map-card:nth-child(4) { animation-delay: 0.4s; }
+.map-card:nth-child(5) { animation-delay: 0.5s; }
+.map-card:nth-child(6) { animation-delay: 0.6s; }
+.map-card:nth-child(7) { animation-delay: 0.7s; }
+.map-card:nth-child(8) { animation-delay: 0.8s; }
+.map-card:nth-child(9) { animation-delay: 0.9s; }
+.map-card:nth-child(10) { animation-delay: 1.0s; }
 
 /* Эффект блеска на кнопках */
-button::after,
-#buttonShop::after,
-#buttonRestaurants::after,
-#buttonBusStop::after,
-#buttonTheaterСinema::after,
-#buttonHotels::after,
-#buttonMalls::after,
-#buttonGasStations::after,
-#buttonPolyclinics::after,
-#buttonSportsCenters::after,
-#buttonBeautySalons::after {
+.map-button::after {
     content: '';
     position: absolute;
     top: -50%;
@@ -379,17 +472,7 @@ button::after,
     opacity: 0;
 }
 
-button:hover::after,
-#buttonShop:hover::after,
-#buttonRestaurants:hover::after,
-#buttonBusStop:hover::after,
-#buttonTheaterСinema:hover::after,
-#buttonHotels:hover::after,
-#buttonMalls:hover::after,
-#buttonGasStations:hover::after,
-#buttonPolyclinics:hover::after,
-#buttonSportsCenters:hover::after,
-#buttonBeautySalons:hover::after {
+.map-button:hover::after {
     opacity: 1;
     left: 100%;
 }
@@ -428,4 +511,69 @@ iframe {
 iframe:not([src=""]) {
     background: white;
     animation: none;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .maps-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+        gap: 25px;
+    }
+}
+
+@media (max-width: 992px) {
+    .maps-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .map-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .maps-container {
+        grid-template-columns: 1fr; /* 1 колонка на мобильных */
+        gap: 20px;
+    }
+    
+    #mapText {
+        font-size: 32px;
+        margin: 30px 0;
+    }
+    
+    .map-title {
+        font-size: 20px;
+    }
+    
+    iframe {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .maps-container {
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    .map-card {
+        padding: 15px;
+    }
+    
+    iframe {
+        height: 200px;
+    }
+    
+    .map-button {
+        height: 45px;
+        font-size: 14px;
+    }
+    
+    .map-address {
+        font-size: 12px;
+        padding: 10px;
+    }
 }

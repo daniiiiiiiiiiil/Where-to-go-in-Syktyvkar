@@ -4,14 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="plan.css">
-    <title>План походов</title>
+    <title>План походов | FinTrack</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Шапка -->
+    <header class="site-header">
+        <div class="header-content">
+            <a href="Main.html" class="logo">FinTrack</a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="Map.html" class="nav-link">
+                        <i class="fas fa-map"></i>
+                        <span>Карта</span>
+                    </a></li>
+                    <li><a href="spending.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Траты</span>
+                    </a></li>
+                    <li><a href="Map.html" class="nav-link">
+                        <i class="fas fa-fire"></i>
+                        <span>Популярные места</span>
+                    </a></li>
+                    <li><a href="plan.html" class="nav-link active">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Запланированные места</span>
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <img src="people.png" alt="Профиль" class="profile-img">
+                <span class="profile-name">Иван П.</span>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
-        <header>
+        <div class="page-header">
             <h1>Запланированные походы</h1>
             <p>Ваши предстоящие приключения на природе</p>
-        </header>
+            <button class="add-event-btn" id="addEventBtn">
+                <i class="fas fa-plus"></i> Добавить мероприятие
+            </button>
+        </div>
         
         <div class="content">
             <section class="calendar-section">
@@ -39,94 +76,89 @@
                         </tbody>
                     </table>
                     <div class="selected-date-info" id="selected-date-info">
-                        <p>Выберите дату для просмотра событий</p>
+                        <div class="date-header">
+                            <h4>Суббота, 19 июля 2025 г.</h4>
+                            <span class="event-count">1 мероприятие</span>
+                        </div>
+                        <div class="events-list">
+                            <p><strong>Запланировано походов:</strong></p>
+                            <ul>
+                                <li>Набережная реки Сысола — вечерняя прогулка</li>
+                            </ul>
+                        </div>
+                        <button class="add-to-date-btn" id="addToDateBtn">
+                            <i class="fas fa-calendar-plus"></i> Добавить на эту дату
+                        </button>
                     </div>
                 </div>
             </section>
             
             <section class="hikes-section">
                 <h2>Прогулки и места в Сыктывкаре</h2>
+                <div class="filter-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchEvents" placeholder="Поиск мероприятий...">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Все</button>
+                        <button class="filter-btn" data-filter="upcoming">Предстоящие</button>
+                        <button class="filter-btn" data-filter="completed">Завершенные</button>
+                    </div>
+                </div>
                 <ul class="hike-list" id="hike-list">
-                    <li class="hike-item" data-date="2025-07-12">
-                        <h3 class="hike-title">Национальный музей Республики Коми</h3>
-                        <div class="hike-details">
-                            <div class="detail-item">
-                                <span class="detail-icon">📍</span>
-                                <span>ул. Коммунистическая, центр города</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">👥</span>
-                                <span>Группа (8–15 человек)</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">📅</span>
-                                <span>12 июля 2025</span>
-                            </div>
-                        </div>
-                        <p class="hike-description">Экскурсия по экспозициям музея: история, этнография и природа Коми. Подходит для тех, кто интересуется культурой региона. Включает гида и время для самостоятельного осмотра.</p>
-                    </li>
-
-                    <li class="hike-item" data-date="2025-07-19">
-                        <h3 class="hike-title">Набережная реки Сысола — вечерняя прогулка</h3>
-                        <div class="hike-details">
-                            <div class="detail-item">
-                                <span class="detail-icon">📍</span>
-                                <span>Набережная Сысолы, рядом с парком</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">👥</span>
-                                <span>Малая группа (до 10 человек)</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">📅</span>
-                                <span>19 июля 2025</span>
-                            </div>
-                        </div>
-                        <p class="hike-description">Неспешная прогулка по набережной с видом на реку, фото-стопы и рассказ о городской архитектуре. Легкий маршрут, подходит для всей семьи.</p>
-                    </li>
-
-                    <li class="hike-item" data-date="2025-07-26">
-                        <h3 class="hike-title">Городской парк культуры и отдыха — пикник и игры</h3>
-                        <div class="hike-details">
-                            <div class="detail-item">
-                                <span class="detail-icon">📍</span>
-                                <span>Городской парк (парк им. С. Кирова)</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">👥</span>
-                                <span>Открытая группа (до 20 человек)</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">📅</span>
-                                <span>26 июля 2025</span>
-                            </div>
-                        </div>
-                        <p class="hike-description">Дневной выезд в парк: пикник, подвижные игры, мини-квесты для участников. Подходит для тех, кто любит активный, но спокойный отдых на природе.</p>
-                    </li>
-
-                    <li class="hike-item" data-date="2025-08-02">
-                        <h3 class="hike-title">Государственный театр оперы и балета Республики Коми — вечерние представления</h3>
-                        <div class="hike-details">
-                            <div class="detail-item">
-                                <span class="detail-icon">📍</span>
-                                <span>ул. Катаева, театр</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">👥</span>
-                                <span>Группа (6–12 человек)</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">📅</span>
-                                <span>2 августа 2025</span>
-                            </div>
-                        </div>
-                        <p class="hike-description">Совместный поход на спектакль с последующим обсуждением в кафе. Подходит тем, кто интересуется культурной жизнью города.</p>
-                    </li>
+                    <!-- Походы будут добавлены через JavaScript -->
                 </ul>
             </section>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Модальное окно добавления мероприятия -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="addEventModal">
+        <div class="modal-header">
+            <h3>Добавить мероприятие</h3>
+            <button class="modal-close" id="modalClose">&times;</button>
+        </div>
+        <form id="eventForm">
+            <div class="form-group">
+                <label for="eventTitle">Название мероприятия</label>
+                <input type="text" id="eventTitle" placeholder="Например: Поход в парк" required>
+            </div>
+            <div class="form-group">
+                <label for="eventDate">Дата</label>
+                <input type="date" id="eventDate" required>
+            </div>
+            <div class="form-group">
+                <label for="eventLocation">Место</label>
+                <input type="text" id="eventLocation" placeholder="Например: Городской парк" required>
+            </div>
+            <div class="form-group">
+                <label for="eventGroupSize">Размер группы</label>
+                <select id="eventGroupSize">
+                    <option value="solo">Один/одна</option>
+                    <option value="small">Малая группа (до 5 чел.)</option>
+                    <option value="medium" selected>Группа (6-15 чел.)</option>
+                    <option value="large">Большая группа (15+ чел.)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="eventDescription">Описание</label>
+                <textarea id="eventDescription" placeholder="Опишите ваше мероприятие..." rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="eventCompleted">
+                    <span>Мероприятие завершено</span>
+                </label>
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="cancel-btn" id="cancelBtn">Отмена</button>
+                <button type="submit" class="save-btn">Сохранить</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="plan.js"></script>
 </body>
 </html>
