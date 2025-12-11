@@ -1,0 +1,968 @@
+/* Сброс и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: #2d3748;
+    padding-top: 70px; /* Отступ для фиксированной шапки */
+}
+
+/* ШАПКА - ТОЧНО КАК В MAIN.HTML */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 10px 5%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ЛОГОТИП */
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    text-decoration: none;
+    color: #2c3e50;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* НАВИГАЦИЯ - КНОПКИ В РЯДУ */
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+/* ЕДИНЫЙ СТИЛЬ ВСЕХ КНОПОК */
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    min-width: 100px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    background: white;
+}
+
+.nav-link i {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #3498db;
+}
+
+/* АКТИВНАЯ КНОПКА */
+.nav-link.active {
+    background: #3498db;
+    color: white;
+    border-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.nav-link.active i {
+    color: white;
+}
+
+/* ХОВЕР */
+.nav-link:hover:not(.active) {
+    background: #f8f9fa;
+    border-color: #3498db;
+    transform: translateY(-1px);
+}
+
+/* ПРОФИЛЬ */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3498db;
+}
+
+.profile-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* АДАПТИВНОСТЬ ШАПКИ */
+@media (max-width: 1200px) {
+    .header-content {
+        gap: 20px;
+    }
+    
+    .nav-link {
+        min-width: 90px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .nav-link i {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .site-header {
+        padding: 10px 3%;
+    }
+    
+    .header-content {
+        flex-wrap: wrap;
+    }
+    
+    .main-nav {
+        order: 3;
+        flex: 100%;
+        margin-top: 15px;
+    }
+    
+    .nav-list {
+        justify-content: space-between;
+        gap: 8px;
+    }
+    
+    .nav-link {
+        flex: 1;
+        height: 45px;
+    }
+    
+    body {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 8px 3%;
+    }
+    
+    .logo {
+        font-size: 22px;
+    }
+    
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    
+    .nav-link {
+        flex: 0 0 calc(50% - 6px);
+        height: 40px;
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+    
+    .nav-link i {
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+    
+    .profile-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .profile-name {
+        font-size: 13px;
+    }
+    
+    body {
+        padding-top: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo {
+        align-self: flex-start;
+    }
+    
+    .user-profile {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+    
+    .main-nav {
+        margin-top: 10px;
+        order: 2;
+    }
+    
+    .nav-list {
+        width: 100%;
+    }
+    
+    .nav-link {
+        flex: 0 0 calc(50% - 6px);
+        height: 45px;
+        font-size: 12px;
+    }
+    
+    body {
+        padding-top: 130px;
+    }
+}
+
+/* Основной контент */
+.main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Общая сумма */
+.total-summary {
+    max-width: 800px;
+    margin: 50px auto;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+}
+
+.total-summary h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.total-summary .total-amount {
+    font-size: 42px;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.total-summary .companies {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+/* Фильтры по периоду */
+.period-selector {
+    max-width: 800px;
+    margin: 30px auto;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.period-button {
+    padding: 12px 24px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.period-button:hover,
+.period-button.active {
+    background: #4f46e5;
+    color: white;
+    border-color: #4f46e5;
+}
+
+/* Основной контейнер с кругом и легендой */
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Круговая диаграмма */
+.circle-chart {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.circle-chart-svg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 20px 60px rgba(79, 70, 229, 0.2);
+    transform: rotate(-90deg);
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #e2e8f0;
+    stroke-width: 16;
+}
+
+.circle-segment {
+    fill: none;
+    stroke-width: 16;
+    stroke-linecap: round;
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Центральное содержимое */
+.circle-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 50%;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.amount {
+    font-size: 36px;
+    font-weight: 800;
+    color: #2d3748;
+    margin-bottom: 6px;
+    line-height: 1.1;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: -1px;
+}
+
+.companies {
+    font-size: 16px;
+    color: #4f46e5;
+    font-weight: 600;
+    background: rgba(79, 70, 229, 0.1);
+    padding: 8px 20px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+/* Легенда расходов */
+.expenses-legend {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 500px;
+    flex: 1;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.expenses-legend::-webkit-scrollbar {
+    width: 6px;
+}
+
+.expenses-legend::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.expenses-legend::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 10px;
+}
+
+.legend-header {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.legend-item:hover {
+    background: white;
+    transform: translateX(8px);
+    border-color: #c7d2fe;
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.1);
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 3px solid white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 15px;
+}
+
+.legend-name {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-amount {
+    font-size: 17px;
+    font-weight: 700;
+    color: #4f46e5;
+    min-width: 100px;
+    text-align: right;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.legend-percentage {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    min-width: 60px;
+    text-align: center;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-left: 15px;
+}
+
+/* Блоки последних транзакций */
+.transactions-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.transactions-header {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 25px;
+}
+
+#blockUl {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    gap: 20px;
+}
+
+.Block {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, #4f46e5, #7c3aed);
+    border-radius: 3px 0 0 3px;
+}
+
+.Block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.info {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #4f46e5;
+    margin-right: 30px;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+}
+
+.Data {
+    font-size: 16px;
+    color: #718096;
+    font-weight: 500;
+    background: #f7fafc;
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    min-width: 120px;
+    text-align: center;
+}
+
+/* Иконка добавления траты */
+.add-expense {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.add-expense:hover {
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 12px 30px rgba(79, 70, 229, 0.5);
+}
+
+/* Панель добавления трат */
+.add-expense-panel {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.panel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.panel-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.panel-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.close-panel {
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #94a3b8;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close-panel:hover {
+    background: #f1f5f9;
+    color: #4f46e5;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2d3748;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.input-group input::placeholder {
+    color: #94a3b8;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+}
+
+/* Дополнительные стили */
+.legend-count {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+/* Анимация появления новых транзакций */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.Block {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Стили для активной кнопки периода */
+.period-button.active {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    border-color: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.2);
+}
+
+.period-button {
+    transition: all 0.3s ease;
+}
+
+.period-button:hover:not(.active) {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Анимация обновления круговой диаграммы */
+.circle-segment {
+    animation: drawSegment 1.5s ease-out forwards;
+}
+
+@keyframes drawSegment {
+    from {
+        stroke-dasharray: 0 100;
+    }
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Block {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.Block:nth-child(1) { animation-delay: 0.1s; }
+.Block:nth-child(2) { animation-delay: 0.2s; }
+.Block:nth-child(3) { animation-delay: 0.3s; }
+.Block:nth-child(4) { animation-delay: 0.4s; }
+
+/* Адаптивность панели */
+@media (max-width: 768px) {
+    .panel-content {
+        width: 95%;
+        padding: 25px 20px;
+    }
+    
+    .panel-header h3 {
+        font-size: 22px;
+    }
+    
+    .input-group input,
+    .input-group select {
+        padding: 12px 14px;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .circle-chart {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .circle-content {
+        width: 180px;
+        height: 180px;
+        padding: 30px;
+    }
+    
+    .amount {
+        font-size: 32px;
+    }
+    
+    .expenses-legend {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .circle-chart {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .circle-content {
+        width: 160px;
+        height: 160px;
+        padding: 25px;
+    }
+    
+    .amount {
+        font-size: 28px;
+    }
+    
+    .companies {
+        font-size: 14px;
+        padding: 6px 16px;
+    }
+    
+    .legend-item {
+        padding: 12px;
+    }
+    
+    .legend-name {
+        font-size: 15px;
+    }
+    
+    .legend-amount {
+        font-size: 16px;
+        min-width: 80px;
+    }
+    
+    .legend-percentage {
+        font-size: 13px;
+        min-width: 50px;
+        padding: 5px 10px;
+    }
+    
+    .Block {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .price, .Data {
+        margin: 0;
+        align-self: flex-end;
+    }
+    
+    .period-selector {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 10px;
+    }
+    
+    .circle-chart {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .circle-content {
+        width: 150px;
+        height: 150px;
+        padding: 20px;
+    }
+    
+    .amount {
+        font-size: 24px;
+    }
+    
+    .info {
+        font-size: 16px;
+    }
+    
+    .price {
+        font-size: 20px;
+    }
+    
+    .Data {
+        font-size: 14px;
+        min-width: 100px;
+    }
+    
+    .expenses-legend {
+        padding: 20px;
+    }
+    
+    .legend-header {
+        font-size: 20px;
+    }
+    
+    .transactions-header {
+        font-size: 20px;
+    }
+}

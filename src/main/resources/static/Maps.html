@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Maps.css">
+    <title>Карта | FinTrack</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="site-header">
+        <div class="header-content">
+            <a href="Main.html" class="logo">FinTrack</a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="Maps.html" class="nav-link">
+                        <i class="fas fa-map"></i>
+                        <span>Карта</span>
+                    </a></li>
+                    <li><a href="spending.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Траты</span>
+                    </a></li>
+                    <li><a href="Map.html" class="nav-link">
+                        <i class="fas fa-fire"></i>
+                        <span>Популярные места</span>
+                    </a></li>
+                    <li><a href="plan.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Запланированные места</span>
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <img src="people.png" alt="Профиль" class="profile-img">
+                <span class="profile-name">Иван П.</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="fullscreen-map">
+        <div class="map-header">
+            <h1 id="mapTitle">Продуктовые магазины</h1>
+          
+        </div>
+        
+        <div id="fullMap" class="map-container">
+            <!-- Карта будет загружена через JavaScript -->
+        </div>
+        
+        <div class="map-info">
+            <div class="info-card">
+                <h3><i class="fas fa-info-circle"></i> Информация</h3>
+                <p id="mapDescription">Карта продуктовых магазинов в Сыктывкаре</p>
+                <div class="address-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="mapAddress">Советская ул., 58, Сыктывкар</span>
+                </div>
+                <div class="map-stats">
+                    <div class="stat">
+                        <i class="fas fa-store"></i>
+                        <span id="storesCount">10+ магазинов</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-walking"></i>
+                        <span id="distanceInfo">В 300м от вас</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Maps.js"></script>
+</body>
+</html>

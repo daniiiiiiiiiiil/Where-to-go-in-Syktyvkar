@@ -1,0 +1,486 @@
+/* ОБЩИЕ СТИЛИ (без изменений) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding-top: 70px; /* Меньше отступ - шапка стала компактнее */
+}
+
+/* ШАПКА*/
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 10px 5%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ЛОГОТИП */
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    text-decoration: none;
+    color: #2c3e50;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* НАВИГАЦИЯ  */
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+/* ЕДИНЫЙ СТИЛЬ ВСЕХ КНОПОК */
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    min-width: 100px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    background: white;
+}
+
+.nav-link i {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #3498db;
+}
+
+/* АКТИВНАЯ КНОПКА */
+.nav-link.active {
+    background: #3498db;
+    color: white;
+    border-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.nav-link.active i {
+    color: white;
+}
+
+/* ХОВЕР */
+.nav-link:hover:not(.active) {
+    background: #f8f9fa;
+    border-color: #3498db;
+    transform: translateY(-1px);
+}
+
+/* ПРОФИЛЬ */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3498db;
+}
+
+.profile-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* АДАПТИВНОСТЬ КНОПОК */
+@media (max-width: 1200px) {
+    .header-content {
+        gap: 20px;
+    }
+    
+    .nav-link {
+        min-width: 90px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .nav-link i {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .site-header {
+        padding: 10px 3%;
+    }
+    
+    .header-content {
+        flex-wrap: wrap;
+    }
+    
+    .main-nav {
+        order: 3;
+        flex: 100%;
+        margin-top: 15px;
+    }
+    
+    .nav-list {
+        justify-content: space-between;
+        gap: 8px;
+    }
+    
+    .nav-link {
+        flex: 1;
+        height: 45px;
+    }
+    
+    body {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 8px 3%;
+    }
+    
+    .logo {
+        font-size: 22px;
+    }
+    
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    
+    .nav-link {
+        flex: 0 0 calc(50% - 6px);
+        height: 40px;
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+    
+    .nav-link i {
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+    
+    .profile-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .profile-name {
+        font-size: 13px;
+    }
+    
+    body {
+        padding-top: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo {
+        align-self: flex-start;
+    }
+    
+    .user-profile {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+    
+    .main-nav {
+        margin-top: 10px;
+        order: 2;
+    }
+    
+    .nav-list {
+        width: 100%;
+    }
+    
+    .nav-link {
+        flex: 0 0 calc(50% - 6px);
+        height: 45px;
+        font-size: 12px;
+    }
+    
+    body {
+        padding-top: 130px;
+    }
+}
+
+
+.map-container {
+    position: relative;
+    margin: 25px 0 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+#mapMain {
+    width: 100%;
+    height: 400px;
+    display: block;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #2c3e50;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.map-overlay i {
+    color: #e74c3c;
+}
+
+/* Финансовый обзор */
+.financial-overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Круговая диаграмма */
+.chart-container {
+    flex: 1;
+    max-width: 500px;
+}
+
+.circle-chart {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.circle-chart-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #ecf0f1;
+    stroke-width: 3;
+}
+
+.circle-segment {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dasharray 1s ease;
+    cursor: pointer;
+}
+
+.circle-segment:hover {
+    stroke-width: 3.5;
+    filter: brightness(1.1);
+}
+
+.circle-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.total-amount {
+    font-size: 28px;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    line-height: 1.2;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.total-companies {
+    font-size: 16px;
+    color: #7f8c8d;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.month-label {
+    font-size: 14px;
+    color: #95a5a6;
+    font-weight: 500;
+    padding: 5px 15px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border: 1px solid #ecf0f1;
+}
+
+/* Легенда трат */
+.expenses-legend {
+    flex: 1;
+    max-width: 400px;
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ecf0f1;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.expenses-legend h3 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+}
+
+.expenses-legend h3 i {
+    color: #3498db;
+}
+
+.legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 15px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.legend-item:hover {
+    background: white;
+    transform: translateX(5px);
+    border-color: #3498db;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+    border: 3px solid white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.legend-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.legend-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.legend-category {
+    font-size: 13px;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.legend-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+}
+
+.legend-amount {
+    font-size: 17px;
+    font-weight: 800;
+    color: #2c3e50;
+}
+
+.legend-percentage {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3498db;
+    background: rgba(52, 152, 219, 0.1);
+    padding: 3px 10px;
+    border-radius: 10px;
+}

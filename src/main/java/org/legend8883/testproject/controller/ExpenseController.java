@@ -25,6 +25,10 @@ public class ExpenseController {
     private final ExpenseService expenseService;
 
     private User getCurrentUser(Authentication authentication) {
+        if(authentication == null) {
+            throw new RuntimeException("Authentication required");
+        }
+
         return (User) authentication.getPrincipal();
     }
 
@@ -56,7 +60,6 @@ public class ExpenseController {
     @GetMapping("/{expenseId}")
     public ResponseEntity<ExpenseResponse> getExpense(
             @PathVariable Long expenseId,
-            @RequestBody @Valid ExpenseRequest request,
             Authentication authentication) {
         log.debug("Getting expense ID = {}", expenseId);
 

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Main.css">
+    <title>Финансовый обзор</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="Main.html" class="logo">FinTrack</a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="Maps.html" class="nav-link active">
+                        <i class="fas fa-map"></i>
+                        <span>Карта</span>
+                    </a></li>
+                    <li><a href="spending.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Траты</span>
+                    </a></li>
+                    <li><a href="Map.html" class="nav-link">
+                        <i class="fas fa-fire"></i>
+                        <span>Популярные места</span>
+                    </a></li>
+                    <li><a href="plan.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Запланированные места</span>
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <img src="people.png" alt="Профиль" class="profile-img">
+                <span class="profile-name">Иван П.</span>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="map-container">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A845e026f1a4ec18f4a5cc65499facb345fbe465e433af52027367da1274ee03f&amp;source=constructor" 
+                    id="mapMain" frameborder="0"></iframe>
+            <div class="map-overlay">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Ваши финансовые места</span>
+            </div>
+        </div>
+        
+        <div class="financial-overview">
+            <div class="chart-container">
+                <div class="circle-chart">
+                    <svg viewBox="0 0 36 36" class="circle-chart-svg">
+                        <path class="circle-bg"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <!-- Сегменты диаграммы -->
+                        <path class="circle-segment" data-category="Образование" stroke="#3498db"
+                              stroke-dasharray="27, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" />
+                        <path class="circle-segment" data-category="Пятерочка" stroke="#2ecc71"
+                              stroke-dasharray="17.1, 100" d="M18 2.0845 a 15.9155 15.9155 0 1 1 0 31.831" />
+                        <path class="circle-segment" data-category="Спорт" stroke="#e74c3c"
+                              stroke-dasharray="14.4, 100" d="M18 2.0845 a 15.9155 15.9155 0 1 1 0 31.831" />
+                        <path class="circle-segment" data-category="Вкусно и точка" stroke="#f39c12"
+                              stroke-dasharray="13.5, 100" d="M18 2.0845 a 15.9155 15.9155 0 1 1 0 31.831" />
+                        <path class="circle-segment" data-category="Переводы" stroke="#9b59b6"
+                              stroke-dasharray="10.8, 100" d="M18 2.0845 a 15.9155 15.9155 0 1 1 0 31.831" />
+                    </svg>
+                    <div class="circle-content">
+                        <div class="total-amount">111 000 ₽</div>
+                        <div class="total-companies">5 категорий</div>
+                        <div class="month-label">Декабрь 2024</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="expenses-legend">
+                <h3><i class="fas fa-chart-pie"></i> Расходы по категориям</h3>
+                <div class="legend-items">
+                    <!-- Образование -->
+                    <div class="legend-item" data-category="Образование">
+                        <div class="legend-color" data-category="Образование"></div>
+                        <div class="legend-info">
+                            <div class="legend-name">Образование</div>
+                            <div class="legend-amount">30 000 ₽</div>
+                        </div>
+                        <div class="legend-percentage">27.0%</div>
+                    </div>
+                    
+                    <!-- Пятерочка -->
+                    <div class="legend-item" data-category="Пятерочка">
+                        <div class="legend-color" data-category="Пятерочка"></div>
+                        <div class="legend-info">
+                            <div class="legend-name">Пятерочка</div>
+                            <div class="legend-amount">19 000 ₽</div>
+                        </div>
+                        <div class="legend-percentage">17.1%</div>
+                    </div>
+                    
+                    <!-- Спорт -->
+                    <div class="legend-item" data-category="Спорт">
+                        <div class="legend-color" data-category="Спорт"></div>
+                        <div class="legend-info">
+                            <div class="legend-name">Спорт</div>
+                            <div class="legend-amount">16 000 ₽</div>
+                        </div>
+                        <div class="legend-percentage">14.4%</div>
+                    </div>
+                    
+                    <!-- Вкусно и точка -->
+                    <div class="legend-item" data-category="Вкусно и точка">
+                        <div class="legend-color" data-category="Вкусно и точка"></div>
+                        <div class="legend-info">
+                            <div class="legend-name">Вкусно и точка</div>
+                            <div class="legend-amount">15 000 ₽</div>
+                        </div>
+                        <div class="legend-percentage">13.5%</div>
+                    </div>
+                    
+                    <!-- Переводы -->
+                    <div class="legend-item" data-category="Переводы">
+                        <div class="legend-color" data-category="Переводы"></div>
+                        <div class="legend-info">
+                            <div class="legend-name">Переводы</div>
+                            <div class="legend-amount">12 000 ₽</div>
+                        </div>
+                        <div class="legend-percentage">10.8%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="Circle.js"></script>
+</body>
+</html>
