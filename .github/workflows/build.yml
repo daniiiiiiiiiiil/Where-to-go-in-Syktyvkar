@@ -1,37 +1,59 @@
-name: Build Project
+name: Build and Release
 
 on:
   push:
-    branches: ["master"]
+    branches: [ master ]
 
 jobs:
-  build:
+  build-and-release:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Java 21
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Build WITHOUT tests
+      - name: Build JAR
         run: |
-          if [ -f "./gradlew" ]; then
-            chmod +x gradlew
-            ./gradlew build -x test
-          
+          if [ -n "${{ github.ref_name }}" ] && [[ "${{ github.ref_name }}" == v* ]]; then
+            VERSION="${GITHUB_REF_NAME#v}"
           else
-            sudo apt-get update
-            sudo apt-get install -y gradle
-            gradle build -x test
+            VERSION="1.0.${{ github.run_number }}"
           fi
+          
+          echo "Building version: $VERSION"
+          ./gradlew build -x test -Pversion=$VERSION
 
-      - name: Upload JAR
-        uses: actions/upload-artifact@v4
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: TestProject-JAR
-          path: build/libs/*.jar
+          tag_name: v1.0.${{ github.run_number }}
+          name: "Release v1.0.${{ github.run_number }}"
+          body: |
+            ## Что нового
+            - Автоматическая сборка из GitHub Actions
+            - Номер сборки: #${{ github.run_number }}
+            - Коммит: ${{ github.sha }}
+            
+            ## Как запустить
+            ```bash
+            java -jar TestProject-*.jar
+            ```
+            
+            ### Для Windows
+            Скачайте `start.bat` из репозитория
+
+          draft: false
+          prerelease: false
+          files: |
+            build/libs/*.jar
+            start.bat
+          generate_release_notes: true
