@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Setup Java 21
         uses: actions/setup-java@v4
@@ -21,13 +21,13 @@ jobs:
       - name: Build
         run: |
           if [ -f "./gradlew" ]; then
-          chmod +x gradlew
-          ./gradlew build
+            chmod +x gradlew
+            ./gradlew build
           
           else
-          sudo apt-get update
-          sudo apt-get install -y gradle
-          gradle build
+            sudo apt-get update
+            sudo apt-get install -y gradle
+            gradle build
           fi
 
       - name: Upload JAR
