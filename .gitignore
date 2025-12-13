@@ -65,7 +65,7 @@ application-dev.properties
 
 # Compiled files
 *.class
-*.jar
+#*.jar
 *.war
 *.ear
 
